@@ -1,6 +1,6 @@
 generate:
 	@echo "Generating..."
-	@go get github.com/deepmap/oapi-codegen/v2/cmd/oapi-codegen@latest
+	@go get github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
 	@go generate ./...
 deploy:
 	@echo "Deploying..."
