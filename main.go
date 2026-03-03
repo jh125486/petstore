@@ -27,6 +27,7 @@ func main() {
 		log.Fatalf("Error loading swagger spec\n: %s", err)
 	}
 	r.Get("/openapi.json", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		if err = json.NewEncoder(w).Encode(spec); err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
