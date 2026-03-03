@@ -7,3 +7,7 @@ deploy:
 	@echo "Deploying..."
 	@go mod tidy
 	@gcloud run deploy --source . petstore --region us-south1 --project $(GCLOUD_PROJECT)
+
+url:
+	@echo "Getting URL..."
+	@gcloud run services describe petstore --platform managed --format 'value(status.url)' --region us-south1 --project $(GCLOUD_PROJECT)
